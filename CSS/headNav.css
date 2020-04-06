@@ -1,0 +1,103 @@
+.headNav{
+	width:100%;
+	height:39px;
+	background-color:#333;
+}
+.headNav div{
+	position:relative;
+	width:1226px;
+	margin:0 auto;
+}
+.headNav div .list1{
+	margin-right:275px;
+}
+.headNav div .list2{
+	margin-right:20px;
+}
+.headNav div ul{
+	float:left;
+	padding-top:14px;
+}
+.headNav div ul li{
+	float:left;
+	font-size:12px;
+	padding:0 6px;
+	color:#c1c1c1;
+	border-left:1px solid #3c3c3c;
+	vertical-align:middle;
+}
+.headNav div ul .erweima{
+	display:none;
+	position:absolute;
+	top:39px;
+	left:514px;
+	height:115px;
+	padding:20px 20px 15px 19px;
+	border:0;
+	font-size:14px;
+	color:#000;
+	vertical-align:middle;
+	box-shadow:0px 5px 5px 0 #ccc;
+}
+.headNav div ul .erweima div{
+	width:85px;
+}
+.headNav .shopcar{
+	float:left;
+	width:80px;
+	height:17px;
+	padding:10px 24px 12px 16px;
+	font-size:12px;
+	color:#c1c1c1;
+	background-color:#424242
+}
+.headNav div.shopcarlist{
+	display:none;
+	position:absolute;
+	top:39px;
+	left:1065px;
+	width:254px;
+	height:98px;
+	font-size:13px;
+	padding:56px 0 0 62px;
+	box-shadow:0 5px 5px 0 #ccc;
+}
+.headNav div ul .erweima:hover{
+	color:#000;
+}
+.headNav div ul li:hover{
+	color:#fff;
+}
+.headNav div ul .download:hover+.erweima{
+	display:block;
+}
+.headNav .shopcar:hover+.shopcarlist{
+	display:block;
+}
+.headNav .shopcar:hover{
+	color:#ff6700;
+}
+.headNav div ul .erweima div img{
+	width:86px;
+	margin-bottom:5px;
+}
+.headNav div ul .first{
+	border:none;
+	padding-right:6px;
+}
+@font-face {
+	font-family: 'iconfont';
+	src: url('../icon/headNavShopcar/iconfont.eot');
+	src: url('../icon/headNavShopcar/iconfont.eot?#iefix') format('embedded-opentype'),
+	url('../icon/headNavShopcar/iconfont.woff2') format('woff2'),
+	url('../icon/headNavShopcar/iconfont.woff') format('woff'),
+	url('../icon/headNavShopcar/iconfont.ttf') format('truetype'),
+	url('../icon/headNavShopcar/iconfont.svg#iconfont') format('svg');
+}
+.iconfont {
+	font-family: "iconfont" !important;
+	font-size: 16px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
