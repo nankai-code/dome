@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        table{
+            width: 500px;
+            margin:100px auto;
+            border:1px solid #000;
+            border-collapse: collapse;
+        }
+        tr,th,td{
+            border:1px solid #000;
+        }
+        td{
+            text-align: center;
+        }
+        td>img{
+            width: 100px;
+        }
+        .price::before{
+            content:"$";
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>图片</th>
+                <th>单价</th>
+                <th>数量</th>
+                <th>价格</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1027972300,455582138&fm=26&gp=0.jpg" alt="">
+                </td>
+                <td>
+                    <span class="price">20</span>
+                </td>
+                <td>
+                    <button class="sub">-</button>
+                    <span class="num">0</span>
+                    <button class="add">+</button>
+                </td>
+                <td class="sum-price">
+                    0
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        let addBtn=document.querySelector(".add"),
+            subBtn=document.querySelector(".sub"),
+            price=document.querySelector(".price"),
+            num=document.querySelector(".num"),
+            sumPrice=document.querySelector(".sum-price");
+        
+        addBtn.onclick=function(){
+            num.innerText=parseInt(num.innerText)+1;
+            sumPrice.innerText=parseInt(price.innerText)*parseInt(num.innerText);
+        }
+        subBtn.onclick=function(){
+            if(parseInt(num.innerText)>0){
+                num.innerText=parseInt(num.innerText)-1;
+                sumPrice.innerText=parseInt(price.innerText)*parseInt(num.innerText);
+            }
+        }
+    </script>
+</body>
+</html>

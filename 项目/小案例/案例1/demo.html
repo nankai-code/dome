@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <style>
+        body,ul,p{
+            margin: 0px;
+        }
+        ul{
+            padding-left: 0px;
+            list-style: none;
+        }
+        .banner{
+            width: 500px;
+            height: 550px;
+            margin: 50px auto;
+        }
+        .con{
+            position: relative;
+            width: 500px;
+            height: 500px;
+        }
+        .con>button{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .con>button.leftBtn{
+            left: 0;
+        }
+        .con>button.rightBtn{
+            right:0;
+        }
+        .con>ul{
+            width: 100%;
+            height: 100%;
+        }
+        .con>ul>li{
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        .con>ul>li>p{
+            position: absolute;
+            width: 100%;
+            background-color:rgba(0,0,0,0.6);
+            text-align: center;
+            color: aliceblue;
+        }
+        .con>ul>li>p:last-child{
+            bottom: 0;
+        }
+        .btnlist{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+        }
+        .btnlist>button{
+            background-color: #ccc;
+            border:none;
+        }
+        .btnlist>button:last-child{
+            margin-left: 20px;
+        }
+        button.active{
+            background-color: rgb(161, 37, 37);
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="con">
+            <ul>
+                <li style="display:block;">
+                    <p>1/5</p>
+                    <img src="images/1.jpg" alt="">
+                    <p>草帽</p>
+                </li>
+                <li>
+                    <p>2/5</p>
+                    <img src="images/2.jpg" alt="">
+                    <p>小子</p>
+                </li>
+                <li>
+                    <p>3/5</p>
+                    <img src="images/3.jpg" alt="">
+                    <p>艾斯</p>
+                </li>
+                <li>
+                    <p>4/5</p>
+                    <img src="images/4.jpg" alt="">
+                    <p>海军</p>
+                </li>
+                <li>
+                    <p>5/5</p>
+                    <img src="images/5.jpg" alt="">
+                    <p>漫集</p>
+                </li>
+            </ul>
+            <button class="leftBtn"><</button>
+            <button class="rightBtn">></button>
+        </div>
+        <div class="btnlist">
+            <button class="active">普通模式</button>
+            <button>循环模式</button>
+        </div>
+    </div>
+
+    <script>
+        let aLi=document.querySelectorAll("li"),
+            lBtn=document.querySelector(".leftBtn"),
+            rBtn=document.querySelector(".rightBtn"),
+            normalMod=document.querySelector(".btnlist>button:first-child"),
+            reclMod=document.querySelector(".btnlist>button:last-child"),
+            index=0,
+            toggle="off";//模式 off是正常模式,on循环模式
+            
+        normalMod.onclick=function(){
+            toggle="off";
+            normalMod.setAttribute("class","active");
+            reclMod.removeAttribute("class");
+        }
+
+        reclMod.onclick=function(){
+            toggle="on";
+            reclMod.setAttribute("class","active");
+            normalMod.removeAttribute("class");
+        }//设置点击改变模式,里面的on其实不是很重要,只要toggle里不是off函数里第二个if就会改index的值;
+
+        rBtn.onclick=function(){
+            index++;
+            if(index>4){
+                if(toggle==="off"){
+                    index=4;
+                }else{
+                    index=0;
+                }
+            }
+            aLi[index].style.display="block";
+            aLi[index-1<0?4:index-1].style.display="none";
+        }
+        lBtn.onclick=function(){
+            index--;
+            if(index<0){
+                if(toggle==="off"){
+                    index=0;
+                }else{
+                    index=4;
+                }
+            }
+            aLi[index].style.display="block";
+            aLi[index+1>4?0:index+1].style.display="none";
+        }
+    </script>
+</body>
+</html>

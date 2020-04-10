@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>作业一</title>
+        <style>
+            body,ul{
+                margin: 0;
+            }
+            ul{
+                list-style: none;
+                padding-left: 0px;
+            }
+            .con{
+                width:500px;
+                height:500px;
+                margin: 50px auto 0px;
+                background-color: red;
+            }
+            .btnlist{
+                display: flex;
+                width: 100%;
+                height: 100px;
+                background-color: green;
+                justify-content: space-around;
+                align-items: center;
+            }
+            .btnlist>li{
+                width: 100px;
+                height: 50px;
+                background-color: yellow;
+                font-size: 20px;
+                font-weight: bold;
+                line-height: 50px;
+                text-align: center;
+            }
+            .shap{
+                position: absolute;
+                width: 300px;
+                height: 300px;
+                background-color: skyblue;
+                margin: 50px 100px 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="con">
+            <ul class="btnlist">
+                <li>效果一</li>
+                <li>效果二</li>
+                <li>效果三</li>
+            </ul>
+            <div class="shap"></div>
+        </div>
+        <script>
+            var aBtn=document.querySelectorAll("li");
+            //li是arry数组,有多个没有变量的函数
+            var oShap=document.querySelector(".shap")
+            //shap是object对象,只有一个函数但是也只有一个并且只有一个变量,属于对象的一种
+            aBtn[0].onclick=function(){
+                oShap.style.backgroundColor="blue";
+                oShap.style.width="300px";
+                oShap.style.height="300px";
+                oShap.style.margin="50px 100px 0px";
+            }
+            aBtn[1].onmouseenter=function(){
+                oShap.style="width:500px;height:400px;margin:0px;transition:1s;";
+            }
+            aBtn[2].oncontextmenu=function(){
+                oShap.style="transform:rotate(360deg);transition:1s;";
+            }
+
+            /*var con=document.querySelector(".content");
+            var btnOne=document.querySelector("li:first-child");
+            var btnTwe=document.querySelector("li:nth-child(2)");
+            var btnThree=document.querySelector("li:nth-child(3)");
+            多次命名太麻烦,并且浏览器还会多次找数据,浪费性能
+            function start1(){
+                con.style.backgroundColor="blue";
+                con.style.width="300px";
+                con.style.height="300px";
+                con.style.margin="50px 100px 0px";
+            }
+            btnOne.onclick=start1;
+
+            function start2(){
+                con.style="width:500px;height:400px;margin:0px;transition:1s;";
+
+            }
+            btnTwe.onmouseenter=start2;
+            btnTwe.onmouseleave=start1;
+
+            function start3(){
+                con.style="transform:rotate(360deg);transition:1s;";
+
+            }
+            btnThree.oncontextmenu=start3;*/
+            //上面的太复杂了,很多一样的函数li)就用匿名函数好了
+        </script>
+    </body>
+</html>

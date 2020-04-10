@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运算符</title>
+    <style>
+        bod,ul{
+            margin:0;
+            /*text-align:center;*/
+        }
+        ul{
+            padding-left: 0;
+            list-style: none;
+        }
+        textarea{
+            display: block;
+            width: 500px;
+            height: 300px;
+            margin: 50px auto 0;
+        }
+        .btn{
+            width: 500px;
+            margin: 10px auto;
+            text-align: right;
+        }
+        .msg{
+            width: 500px;
+            margin: 0 auto;
+        }
+        .msglist{            
+            border-bottom: 1px dotted #ccc;
+            line-height: 50px;
+            text-indent: 2em;
+        }
+    </style>
+</head>
+<body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <div class="btn">
+        <button>提交</button>
+    </div>
+    <ul class="msg">
+        <!--<li class="msglist">南开</li>
+        <li class="msglist">hello world</li>-->
+    </ul>
+    <script>
+        let btn=document.querySelector("button");
+        let textArea=document.querySelector("textarea");
+        let msg=document.querySelector(".msg");
+        btn.onclick=function(){
+            if(textArea.value){
+                msg.innerHTML+="<li class='msglist'>"+textArea.value+"</li>";
+                textArea.value="";
+            }else{
+                alert("尚未输入信息");
+            }
+        }
+    </script>
+</body>
+</html>
